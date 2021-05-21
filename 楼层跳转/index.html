@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.2.1.js"> </script>
+    <title>楼层</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none;
+    }
+    div.box1{
+        height: 300px;
+        width: 1000px;
+        margin:20px auto;
+        border:1px solid red;
+        background: pink;
+    }
+    div.box{
+        height: 300px;
+        width: 1000px;
+        margin:20px auto;
+        border:1px solid red;
+    }
+    ul{
+        display: none;
+        height: 600px;
+        width: 60px;
+        position: fixed;
+        top:0;
+        bottom:0;
+        margin: auto 0;
+        left:50%;
+        margin-left:-600px;
+        
+    }
+    ul li{
+        height: 58px;
+        width: 58px;
+        border: 1px solid blue;
+    }
+    ul li.active{
+        background: red;
+    }
+</style>
+<body>
+    <div class="box1"></div>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">10</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</body>
+</html>
+<script>
+    let arr = $(".box").map(function(){
+        return $(this).offset().top;
+    })
+    arr=arr.toArray();
+    let flag=true;
+    $(window).scroll(function(){
+        if(!flag){
+            return;
+        }
+        let top=$(this).scrollTop();
+        top>=200?$("ul").slideDown():$("ul").slideUp()
+        // if(top>=200){
+        //     $("ul").css("display","block");
+        // }
+        // else{
+        //     $("ul").css("display","none");
+        // }
+        let index=arr.findIndex((item)=>item>=top)
+        $("ul li")
+            .removeClass("active")
+            .eq(index).addClass("active") 
+    })
+    $("ul li").click(function(){
+        let index=$(this).index();
+        // $(window).scrollTop(arr[index]);
+        flag=false;
+        $("ul li")
+            .removeClass("active")
+            .eq(index).addClass("active") 
+        $("html")
+            .finish()
+            .animate({"scrollTop":arr[index]-200},function(){
+                flag=true
+            })   
+    })
+</script>

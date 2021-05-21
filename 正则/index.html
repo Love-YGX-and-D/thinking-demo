@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则</title>
+    <script src="../jquery-3.2.1.js"></script>
+</head>
+<body>
+    <textarea name="con" id="text" cols="30" rows="10"></textarea>
+</body>
+</html>
+<script>
+    let con=document.querySelector("[name=con]");
+    // 定义正则
+    let reg=/法轮功|邪教|台独|枪支|赌博/g;
+    con.oninput=function(){
+        let str=this.value;
+        let newStr="";
+        let str1=reg.exec(str);
+        if(str1){
+            if(str1[0].length==2){
+                newStr=str.replace(str1[0],"**")
+            }else{
+                newStr=str.replace(str1[0],"***")
+            }
+            this.value=newStr;
+        }
+    }    
+    // $(function(){
+    //     let reg=/法轮功|邪教|台独|枪支|毒品/g;
+    //     $(":input").input(function(){
+    //         let str=this.val;
+    //         console.log(str)
+    //         // str=str.toString()
+    //         let new2="";
+    //         let str1=reg.exec(str);
+    //         if(str1){
+    //             if(str1[0].length==2){
+    //                 new2=str.replace(str1[0],"**")
+    //             }
+    //             this.val=new2
+    //         }
+
+    //     })
+    // })
+
+
+
+
+
+    // let con=document.querySelector("[name=con]");
+    // // 定义正则
+    // let reg=/法轮功|邪教|台独|枪支|赌博/g;
+    // con.oninput=function(){
+    //     let str=this.value;
+    //     let newStr="";
+    //     // let str1=reg.exec(str);
+    //     if(reg.exec(str)){
+    //         if(reg.exec(str)[0].length==2){
+    //             newStr=str.replace(reg.exec(str)[0],"**")
+    //         }else{
+    //             newStr=str.replace(reg.exec(str)[0],"***")
+    //         }
+    //         this.value=newStr;
+    //     }
+    // }
+
+    // let str="www.sxuek.COM0100";
+    // let reg=new RegExp("uek","g");
+    // // console.log(reg.test(str));
+    // console.log(reg.exec(str));
+
+    // let reg1=new RegExp("Uek","g");
+    // // console.log(reg1.test(str));
+    // console.log(reg1.exec(str));
+
+
+    // let reg2=/\w/g
+    // console.log(reg2.exec(str));
+    // console.log(reg2.exec(str));
+    // console.log(reg2.exec(str));
+    // console.log(reg2.exec(str));
+    // console.log(reg2.exec(str));
+    // console.log(reg2.exec(str));
+
+
+    // let reg3=/[a-c]/g
+    // console.log(reg3.exec(str));
+    // let reg4=/[A-Z]/g
+    // console.log(reg4.exec(str));
+    // let reg5=/[a-zA-Z0-9\s]/g
+    // console.log(reg5.exec(str));
+    // console.log(reg5.exec(str));
+    // console.log(reg5.exec(str));
+    // console.log(reg5.exec(str));
+    // console.log(reg5.exec(str));
+    // console.log(reg5.exec(str));
+    // console.log(reg5.exec(str));
+    // console.log(reg5.exec(str));
+    // console.log(reg5.exec(str));
+    // console.log(reg5.exec(str));
+    // console.log(reg5.exec(str));
+    // console.log(reg5.exec(str));
+    // console.log(reg5.exec(str));
+    // console.log(reg5.exec(str));
+    // console.log(reg5.exec(str));
+    // console.log(reg5.exec(str));
+
+
+
+
+</script>

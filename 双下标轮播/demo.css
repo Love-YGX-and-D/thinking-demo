@@ -1,0 +1,63 @@
+div.box{
+    height: 300px;
+    width: 600px;
+    border: 1px solid yellow;
+    margin:0 auto;
+    position: relative;
+    overflow: hidden;
+}
+div.box .box1{
+      height: 100%;
+      width: 100%;
+      background: red;
+      position: absolute;
+      top:0px;
+      left: 600px;
+  }
+div.box .box1:nth-child(2){
+    background: yellow;
+}
+div.box .box1:nth-child(3){
+    background: green;
+}
+div.box .box1:nth-child(4){
+    background: blue;
+}
+div.box .box1:nth-child(5){
+    background: greenyellow;
+}
+div.box .left{
+    height: 30px;
+    width: 20px;
+    position: absolute;
+    top:135px;
+    left:0px;
+    background: black;
+}
+div.box .right{
+    height: 30px;
+    width: 20px;
+    position: absolute;
+    top:135px;
+    right:0px;
+    background: black;
+}
+div.box .circle{
+    height: 20px;
+    width: 150px;
+    position: absolute;
+    bottom:25px;
+    right:225px;
+    display: flex;
+    justify-content: space-between;
+}
+div.box .circle .son{
+    height: 15px;
+    width: 20px;
+    border: 2px solid grey;
+    border-radius: 50%;
+    background: rgb(205,205,205);
+}
+div.box .circle .son1{
+    background: aqua;
+}

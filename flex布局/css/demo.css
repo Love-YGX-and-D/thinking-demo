@@ -1,0 +1,211 @@
+div.touzi{
+    height: 500px;
+    width: 500px;
+    border: 2px solid red;
+    margin:0 auto;
+    overflow-x: auto;
+}
+div.touzi::-webkit-scrollbar{
+    height: 0rem;
+}
+div.touzi ul{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+div.touzi ul li{
+    height: 40px;
+    width: 40px;
+    border: 1px solid blue;
+    margin-top: 2px;
+    text-align: center;
+}
+div.touzi ul li:nth-child(2),div.touzi ul li:nth-child(19){
+    width: 60px;
+    order: -2;
+}
+div.touzi ul li:nth-child(3),div.touzi ul li:nth-child(18){
+    width: 70px;
+    height: 200px;
+    flex-grow: 1;
+}
+div.touzi ul li:nth-child(4),div.touzi ul li:nth-child(17){
+    width: 80px;
+    flex-grow: 1;
+}
+div.touzi ul li:nth-child(5),div.touzi ul li:nth-child(16){
+    width: 90px;
+}
+div.touzi ul li:nth-child(7),div.touzi ul li:nth-child(15){
+    width: 110px;
+    /*height: 200px;*/
+}
+div.touzi ul li:nth-child(6){
+    width: 250px;
+}
+div.touzi ul li:nth-child(8),div.touzi ul li:nth-child(14){
+    width: 120px;
+}
+div.touzi ul li:nth-child(9),div.touzi ul li:nth-child(13){
+    width: 130px;
+    flex-basis: 200px;
+}
+div.touzi ul li:nth-child(10),div.touzi ul li:nth-child(12){
+     width: 140px;
+ }
+div.touzi ul li:nth-child(11){
+    width: 150px;
+}
+div.shenzi{
+    height: 100px;
+    width: 100px;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+div.shenzi .box{
+    height: 20px;
+    width: 100%;
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+}
+div.shenzi .box .mao{
+    height: 15px;
+    width: 15px;
+    border: 2px solid yellow;
+}
+div.guzi,div.guzi1,div.guzi2,div.guzi3,div.guzi4,div.guzi5{
+    height: 300px;
+    width: 3000px;
+    border: 2px solid yellow;
+    display: flex;
+    margin-top:20px;
+}
+div.guzi .sezi,div.guzi1 .sezi,div.guzi2 .sezi,div.guzi3 .sezi,div.guzi4 .sezi,div.guzi5 .sezi{
+    height: 250px;
+    width: 250px;
+    border: 2px solid red;
+    background: -webkit-linear-gradient(top,#fff,grey);
+    margin: 10px;
+    display: flex;
+}
+div.guzi .sezi .circle,div.guzi1 .sezi .circle,div.guzi2 .sezi .circle,div.guzi3 .sezi .circle,div.guzi4 .sezi .circle,div.guzi5 .sezi .circle{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin:1px;
+    background: black;
+}
+div.guzi .sezi:nth-child(2){
+    justify-content: center;
+    /*align-items: center;*/
+}
+div.guzi .sezi:nth-child(5){
+    justify-content: center;
+    align-items: center;
+}
+div.guzi .sezi:nth-child(3){
+    justify-content: flex-end;
+}
+div.guzi .sezi:nth-child(4){
+    align-items: center;
+}
+div.guzi .sezi:nth-child(6){
+     justify-content: flex-end;
+     align-items: center;
+ }
+div.guzi .sezi:nth-child(7){
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+div.guzi .sezi:nth-child(8){
+    justify-content: center;
+    align-items: flex-end;
+}
+div.guzi .sezi:nth-child(9){
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+div.guzi1 .sezi:first-child{
+    justify-content: space-between;
+}
+div.guzi1 .sezi:nth-child(2){
+     flex-direction: column;
+     justify-content: space-between;
+ }
+div.guzi1 .sezi:nth-child(3){
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+div.guzi1 .sezi:nth-child(4){
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+div.guzi1 .sezi:nth-child(5) .circle:last-child{
+     align-self: center;
+ }
+div.guzi1 .sezi:nth-child(6){
+    justify-content: space-between;
+}
+div.guzi1 .sezi:nth-child(6) .circle:last-child{
+    align-self: flex-end;
+}
+div.guzi2 .sezi:nth-child(1){
+    justify-content: space-between;
+}
+div.guzi2 .sezi:nth-child(2){
+    justify-content: space-between;
+}
+div.guzi2 .sezi:nth-child(2) .circle:nth-child(2){
+    align-self: center;
+}
+div.guzi2 .sezi:nth-child(2) .circle:nth-child(3){
+    align-self: flex-end;
+}
+div.guzi3 .sezi{
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: space-between;
+}
+div.guzi3 .sezi .sezi1{
+    height: 33%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+div.guzi3 .sezi:nth-child(2) .sezi1{
+    justify-content: space-between;
+    align-content: space-between;
+}
+div.guzi4 .sezi,div.guzi4 .sezi:nth-child(3){
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+div.guzi4 .sezi:nth-child(2){
+    flex-direction: column;
+}
+div.guzi4 .sezi .row{
+    height: 33.33%;
+    width: 100%;
+    display: flex;
+}
+div.guzi4 .sezi .row:nth-child(2){
+    justify-content: center;
+}
+div.guzi4 .sezi .row:nth-child(3){
+    justify-content: space-between;
+}
+div.guzi5 .sezi{
+    flex-wrap: wrap;
+}

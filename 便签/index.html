@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding :0;
+        list-style: none;
+    }
+    body{
+        width:100%;
+        height:100%;
+        background: #b0b0b0;
+    }
+    .header{
+        width:auto;
+        height:50px;
+        background: rgba(47,47,47,0.98);
+    }
+    .header .content{
+        width:600px;
+        height:100%;
+        margin:0 auto;
+    }
+    .header label{
+        line-height: 50px;
+        color:#ddd;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .header input{
+        float:right;
+        width:360px;
+        height:24px;
+        border-radius: 5px;
+        margin-top: 12px;
+        border: 0;
+        text-indent: 10px;
+        outline: 0;
+        box-shadow: 0 1px 0 rgba(255,255,255,0.24), 0 1px 6px rgba(0,0,0,0.45) inset;
+        padding:1px 0;
+    }
+    div.bigBox{
+        width:600px;
+        height:auto;
+        margin:0 auto;
+    }
+    div.bigBox .title{
+        width:auto;
+        height:31px;
+        margin:25px 0;
+    }
+    div.bigBox .title h3{
+        font-size: 20px;
+        font-weight: bold;
+        color:#000;
+        float:left;
+        line-height: 31px;
+    }
+    div.bigBox .title .circle{
+        width:auto;
+        height:20px;
+        background-color: #E6E6FA;
+        float:right;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 20px;
+        margin-top: 5px;
+        margin-right: 5px;
+        padding:0 5px;
+    }
+    div.bigBox .box{
+        width:auto;
+        height:32px;
+        background-color: #fff;
+        border-radius: 5px;
+        border-left: 5px solid #629A9C;
+        margin-bottom:10px;
+    }
+    div.bigBox2 .box{
+        opacity: 0.4;
+        
+    }
+    div.bigBox .box input{
+        width:22px;
+        height:22px;
+        margin-top: 5px;
+        margin-left:12px;
+        float: left;
+    }
+    div.bigBox .box .text{
+        width:auto;
+        height:32px;
+        float:left;
+        line-height: 32px;
+        margin-left:5px;
+    }
+    div.bigBox .box .text input{
+        display: block;
+        width: 100%;
+        height: 100%;
+        border:0;
+        outline: none;
+        color:red;
+        margin:0;
+    }
+    div.bigBox .box .del{
+        width:22px;
+        height:22px;
+        border-radius: 50%;
+        background-color: #CCCCCC;
+        float:right;
+        margin-top: 5px;
+        margin-right: 15px;
+    }
+    div.bigBox .box .del::after{
+        content: "-";
+        width:10px;
+        height:10px;
+        border:2px solid #fff;
+        border-radius: 50%;
+        margin-left: 5px;
+    }
+</style>
+<body>
+    <header class="header">
+        <div class="content">
+            <label for="todo">ToDoList</label>
+            <input type="text" id="todo" placeholder="添加ToDo">
+        </div>
+    </header>
+    <!-- //主体 -->
+    <div class="bigBox">
+        <div class="title">
+            <h3>正在进行</h3>
+            <div class="circle">0</div>
+        </div>
+        <div class="box1">
+            <!-- <div class="box">
+                <input type="checkbox">
+                <div class="text">
+                    <input type="text">
+                </div>
+                <div class="del"></div>
+            </div> -->
+        </div>
+    </div>
+    <div class="bigBox bigBox2">
+        <div class="title">
+            <h3>已经完成</h3>
+            <div class="circle">0</div>
+        </div>
+        <div class="box2">
+            <!-- <div class="box">
+                <input type="checkbox">
+                <div class="text">
+                    <input type="text">
+                </div>
+                <div class="del"></div>
+            </div> -->
+        </div>
+    </div>
+    
+</body>
+<html>
+<script>
+    let arr1=localStorage.arr1 ? localStorage.arr1.split(","):[];
+    let arr2=localStorage.arr2 ? localStorage.arr2.split(","):[];
+    let bigBox1=document.querySelector("div.bigBox");
+    let box1=document.querySelector("div.bigBox .box1");
+    let bigBox2=document.querySelector("div.bigBox2");
+    let box2=document.querySelector("div.bigBox .box2");
+    let num1=document.querySelector("div.bigBox .title .circle");
+    let num2=document.querySelector("div.bigBox2 .title .circle");
+    
+    function update(){
+        // 清空
+        box1.innerHTML="";
+        box2.innerHTML="";
+        // 复制长度
+        num1.innerHTML=arr1.length;
+        num2.innerHTML=arr2.length;
+        //保存
+        localStorage.arr1=arr1.join(",");
+        localStorage.arr2=arr2.join(",");
+        // 遍历
+        arr1.forEach(function(value,index){
+            //创建box标签
+            let div=document.createElement("div");
+            div.className="box";
+            box1.appendChild(div);
+            div.onmouseenter=function(){
+                div.style.cursor="move";
+            }
+            //创建input类
+            let input=document.createElement("input");
+            input.setAttribute("type","checkbox");
+            div.appendChild(input);
+            input.onclick=function(){
+                arr1.splice(index,1);
+                arr2.unshift(value);
+                update();
+            }
+            //创建text
+            let text1=document.createElement("div");
+            text1.className="text";
+            //创建text下的input标签
+            text1.ondblclick=function(){       
+                let input1=document.createElement("input");
+                input1.style.cursor="pointer";
+                let con9=text1.innerHTML;
+                text1.innerHTML="";
+                input1.value=con9;
+                input1.onkeydown=function(e){              
+                    if(e.keyCode == 13 && this.value != ""){  
+                        arr1[index]=input1.value;    
+                        update();
+                    }
+                }
+                input1.onblur=function(){
+                    if(this.value != ""){ 
+                        arr1[index]=input1.value;
+                        update()
+                    }
+                }  
+                text1.appendChild(input1);
+            }
+            text1.innerHTML=value;
+            div.appendChild(text1);
+            //创建del
+            let del1=document.createElement("div");
+            del1.className="del";
+            del1.onclick=function(){
+                arr1.splice(index,1);
+                update();
+            }
+            div.appendChild(del1);  
+            del1.onmouseenter=function(){
+                del1.style.cursor="pointer";
+            }
+        })
+        arr2.forEach(function(value,index){
+            //创建div标签
+            let div=document.createElement("div");
+            div.className="box";
+            box2.appendChild(div);
+            div.onmouseenter=function(){
+                div.style.cursor="move";
+            }
+            //创建input类
+            let input=document.createElement("input");
+            input.setAttribute("type","checkbox");
+            input.setAttribute("checked","checked");
+            div.appendChild(input);
+            input.onclick=function(){
+                arr2.splice(index,1);
+                arr1.unshift(value);
+                update();
+            }
+            //创建text
+            let text1=document.createElement("div");
+            text1.className="text";
+            //创建text下的input标签
+            text1.ondblclick=function(){
+                let input1=document.createElement("input");
+                let con9=text1.innerHTML;
+                text1.innerHTML="";
+                input1.value=con9;
+                input1.onkeydown=function(e){
+                    if(e.keyCode == 13 && this.value != ""){         
+                        arr2[index]=input1.value;    
+                        update();
+                    }
+                }
+                input1.onblur=function(){
+                    if(this.value != ""){ 
+                        arr2[index]=input1.value;
+                        update()
+                    }
+                }  
+                text1.appendChild(input1);
+            }
+            text1.innerHTML=value;
+            div.appendChild(text1);
+            //创建del
+            let del1=document.createElement("div");
+            del1.className="del";
+            div.appendChild(del1);
+            del1.onclick=function(){
+                arr2.splice(index,1);
+                update();
+            }
+            del1.onmouseenter=function(){
+                del1.style.cursor="pointer";
+            }
+            
+        })
+    }
+    let toDo=document.querySelector("#todo");
+    toDo.onkeydown=function(e){
+        if(e.keyCode == 13 && this.value!=""){
+            arr1.unshift(this.value);
+            this.value="";
+            update();   
+        }
+    }
+    update()
+</script>

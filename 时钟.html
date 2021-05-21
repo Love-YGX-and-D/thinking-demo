@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>时钟</title>
+    <script src="../jquery-3.2.1.js"></script>
+</head>
+<style>
+    .box{
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        border: 1px solid black;
+        margin:0 auto;
+        position: relative;
+    }
+    .hz{
+        height: 60px;
+        width: 5px;
+        background: red;
+        position: absolute;
+        left:0;
+        right:0;
+        margin:90px auto 0;
+        z-index: 99;
+        transform-origin: bottom;
+    }
+    .mz{
+        height: 100px;
+        width: 5px;
+        background: green;
+        position: absolute;
+        left:0;
+        right:0;
+        margin:50px auto 0;
+        z-index: 50;
+        transform-origin: bottom;
+    }
+    .sz{
+        height: 130px;
+        width: 5px;
+        background: yellow;
+        position: absolute;
+        left:0;
+        right:0;
+        margin:20px auto 0;
+        z-index: 20;
+        transform-origin: bottom;
+    }
+</style>
+<body>
+    <div class="box">
+        <div class="hz"></div>
+        <div class="mz"></div>
+        <div class="sz"></div>
+    </div>
+</body>
+</html>
+<script>
+    // let hz=document.querySelector('.hz')
+    // let mz=document.querySelector('.mz')
+    // let sz=document.querySelector('.sz')   
+    // function shiZhong(){
+    //     let now=new Date();
+    //     let h=now.getHours();
+    //     let m=now.getMinutes();
+    //     let s=now.getSeconds();
+    //     hz.style.transform=`rotate(${30*h}deg)`
+    //     mz.style.transform=`rotate(${6*m}deg)`
+    //     sz.style.transform=`rotate(${6*s}deg)`
+    // }
+    // shiZhong();
+    // setInterval(shiZhong,1000);
+    $(function(){
+        function shizhong(){
+            let now=new Date();
+            let h=now.getHours();
+            let m=now.getMinutes();
+            let s=now.getSeconds();
+            $(".hz").css("transform",`rotate(${30*h}deg)`);
+            $(".mz").css("transform",`rotate(${6*m}deg)`);
+            $(".sz").css("transform",`rotate(${6*s}deg)`);
+
+        }
+        shizhong()
+        setInterval(shizhong,1000)
+    })
+
+</script>

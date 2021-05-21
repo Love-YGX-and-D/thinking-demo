@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="animate.js"></script>
+    <script src="index.js"></script>
+    <title>滚动条</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    div.search{
+        height: 80px;
+        width: 100%;
+        background: blue;
+        font-size: 40px;
+        color:white;
+        text-align: center;
+        line-height: 80px;
+        position: fixed;
+        top:-80px;
+        left:0;
+    }
+    header,footer{
+        height: 80px;
+        width: 1226px;
+        margin:0 auto;
+        background: greenyellow;
+        font-size: 30px;
+        text-align: center;
+        line-height: 80px;
+    }
+    section.floor{
+        height: 600px;
+        padding:20px 0;
+        width: 1226px;
+        margin: 50px auto;
+    }
+    section.floor img{
+        display: block;
+        height: 150px;
+        width: 600px;
+        margin-right: 12px;
+        float: left;
+    }
+    main.back{
+        height: 50px;
+        width: 50px;
+        background: blueviolet;
+        position: fixed;
+        bottom:25px;
+        right:25px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 18px;
+    }
+    main.smallBox{
+        height: 210px;
+        width: 30px;
+        position: fixed;
+        left: 20px;
+        top:0;
+        bottom:0;
+        margin-top:auto;
+        margin-bottom: auto;
+    }
+    main.smallBox .son{
+        height: 30px;
+        width: 100%;
+        line-height: 30px;
+        font-size: 15px;
+        text-align: center;
+        border: 1px solid #b0b0b0;
+        box-sizing:border-box;
+    }
+    main.smallBox .son1{
+        background: blueviolet;
+    }
+</style>
+<body style="height: 5000px">
+    <div class="search">搜索一下，发现更大的世界</div>
+    <header>头部</header>
+    <section class="floor">
+        <img imgsrc="img/00030.jpg" alt="">
+        <img imgsrc="img/00031.jpg" alt="">
+        <img imgsrc="img/00142.jpg" alt="">
+        <img imgsrc="img/00178.jpg" alt="">
+        <img imgsrc="img/00352.jpg" alt="">
+        <img imgsrc="img/00425.jpg" alt="">
+        <img imgsrc="img/00438.jpg" alt="">
+        <img imgsrc="img/00030.jpg" alt="">
+    </section>
+    <section class="floor">
+        <img imgsrc="img/00030.jpg" alt="">
+        <img imgsrc="img/00031.jpg" alt="">
+        <img imgsrc="img/00142.jpg" alt="">
+        <img imgsrc="img/00178.jpg" alt="">
+        <img imgsrc="img/00352.jpg" alt="">
+        <img imgsrc="img/00425.jpg" alt="">
+        <img imgsrc="img/00438.jpg" alt="">
+        <img imgsrc="img/00030.jpg" alt="">
+    </section>
+    <section class="floor">
+        <img imgsrc="img/00030.jpg" alt="">
+        <img imgsrc="img/00031.jpg" alt="">
+        <img imgsrc="img/00142.jpg" alt="">
+        <img imgsrc="img/00178.jpg" alt="">
+        <img imgsrc="img/00352.jpg" alt="">
+        <img imgsrc="img/00425.jpg" alt="">
+        <img imgsrc="img/00438.jpg" alt="">
+        <img imgsrc="img/00030.jpg" alt="">
+    </section>
+    <section class="floor">
+        <img imgsrc="img/00030.jpg" alt="">
+        <img imgsrc="img/00031.jpg" alt="">
+        <img imgsrc="img/00142.jpg" alt="">
+        <img imgsrc="img/00178.jpg" alt="">
+        <img imgsrc="img/00352.jpg" alt="">
+        <img imgsrc="img/00425.jpg" alt="">
+        <img imgsrc="img/00438.jpg" alt="">
+        <img imgsrc="img/00030.jpg" alt="">
+    </section>
+    <section class="floor">
+        <img imgsrc="img/00030.jpg" alt="">
+        <img imgsrc="img/00031.jpg" alt="">
+        <img imgsrc="img/00142.jpg" alt="">
+        <img imgsrc="img/00178.jpg" alt="">
+        <img imgsrc="img/00352.jpg" alt="">
+        <img imgsrc="img/00425.jpg" alt="">
+        <img imgsrc="img/00438.jpg" alt="">
+        <img imgsrc="img/00030.jpg" alt="">
+    </section>
+    <section class="floor">
+        <img imgsrc="img/00030.jpg" alt="">
+        <img imgsrc="img/00031.jpg" alt="">
+        <img imgsrc="img/00142.jpg" alt="">
+        <img imgsrc="img/00178.jpg" alt="">
+        <img imgsrc="img/00352.jpg" alt="">
+        <img imgsrc="img/00425.jpg" alt="">
+        <img imgsrc="img/00438.jpg" alt="">
+        <img imgsrc="img/00030.jpg" alt="">
+    </section>
+    <section class="floor">
+        <img imgsrc="img/00030.jpg" alt="">
+        <img imgsrc="img/00031.jpg" alt="">
+        <img imgsrc="img/00142.jpg" alt="">
+        <img imgsrc="img/00178.jpg" alt="">
+        <img imgsrc="img/00352.jpg" alt="">
+        <img imgsrc="img/00425.jpg" alt="">
+        <img imgsrc="img/00438.jpg" alt="">
+        <img imgsrc="img/00030.jpg" alt="">
+    </section>
+    <main class="back">返回</main>
+    <main class="smallBox">
+        <main class="son son1">1</main>
+        <main class="son">2</main>
+        <main class="son">3</main>
+        <main class="son">4</main>
+        <main class="son">5</main>
+        <main class="son">6</main>
+        <main class="son">7</main>
+    </main>
+    <footer>底部</footer>
+</body>
+</html>

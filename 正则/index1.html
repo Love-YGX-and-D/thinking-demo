@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ygx </title>
+</head>
+<style>
+    div.box{
+        height: 100px;
+        width: 400px;
+        margin:20px auto;
+        background:blue;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    div.box input{
+        height: 50px;
+        width: 98%;
+        border: 1px solid red;
+    }
+    div.box .box1{
+        height: 30px;
+        width: 98%;
+        border:1px solid yellow;
+        background: white;
+        font-size: 14px;
+        color: green;
+        line-height: 30px;
+        text-align: center;
+    }
+    input:focus{
+        outline: none;
+    }
+</style>
+<body>
+    
+    <div class="box">
+        <input type="text" name="phone">
+        <div class="box1" name="box1"></div>
+    </div>
+    <div class="box">
+        <input type="text" name="id">
+        <div class="box1" name="box2"></div>
+    </div>
+    <div class="box">
+        <input type="text" name="email">
+        <div class="box1" name="box3"></div>
+    </div>
+    <div class="box">
+        <input type="text" name="url">
+        <div class="box1" name="box4"></div>
+    </div>
+    <div class="box">
+        <input type="text" name="shu">
+        <div class="box1" name="box5"></div>
+    </div>
+    <div class="box">
+        <input type="text" name="qukong">
+        <div class="box1" name="box6"></div>
+    </div>
+    <div class="box">
+            <input type="text" name="qukong1">
+            <div class="box1" name="box7"></div>
+        </div>
+</body>
+</html>
+<script>
+    let phone=document.querySelector("[name=phone]");
+    let box1=document.querySelector("[name=box1]");
+    let id=document.querySelector("[name=id]");
+    let box2=document.querySelector("[name=box2]");
+    let email=document.querySelector("[name=email]");
+    let box3=document.querySelector("[name=box3]");
+    let url=document.querySelector("[name=url]");
+    let box4=document.querySelector("[name=box4]");
+    let shu=document.querySelector("[name=shu]");
+    let box5=document.querySelector("[name=box5]");
+    let qukong=document.querySelector("[name=qukong]");
+    let box6=document.querySelector("[name=box6]");
+    let qukong1=document.querySelector("[name=qukong1]");
+    let box7=document.querySelector("[name=box7]");
+    phone.oninput=function(){
+        let reg=/^(133|149|153|173|177|180|181|189|199|130|131|132|145|155|156|166|171|175|176|185|186|134|135|136|137|138|139|147|150|151|152|157|158|159|178|182|183|184|187|188|189)\d{8}$/ ;
+        let arr=reg.exec(this.value);
+        if(arr){
+            box1.innerHTML=`${this.value}是一个手机号`
+        }
+        else{
+            box1.innerHTML="请输入正确的手机号"
+        }
+    }
+    id.oninput=function(){
+        let reg=/^(\d{15}|\d{18}|(\d{17}[xX]))$/ ;
+        let arr=reg.exec(this.value);
+        if(arr){
+            box2.innerHTML=`${this.value}是一个身份证号`
+        }
+        else{
+            box2.innerHTML="请输入正确的身份证号"
+        }
+
+    }
+    email.oninput=function(){
+        let reg=/^(a-zA-Z-0-9|)[a-zA-Z0-9\.-_]{3,17}@(qq\.com|163\.com)$/ ;
+        let arr=reg.exec(this.value);
+        if(arr){
+            box3.innerHTML=`${this.value}是一个邮箱`
+        }
+        else{
+            box3.innerHTML="请输入正确的邮箱"
+        }
+    }
+    url.oninput=function(){
+        let reg=/^(http:\/\/|https:\/\/)[a-zA-Z0-9-\.]{8,59}(\.com|\.cn|\.edu)$/ ;
+        let arr=reg.exec(this.value);
+        if(arr){
+            box4.innerHTML=`${this.value}是一个url`
+        }
+        else{
+            box4.innerHTML="请输入正确的url"
+        }
+    }
+    shu.oninput=function(){
+        let str=this.value;
+        if(str.search(/^([1-9]{1})[0-9]{0,100}\.([0-9]{1,100})$/) == -1){
+            box5.innerHTML=`${this.value}是整数`
+        }
+        else{
+            box5.innerHTML=`${this.value}是小数`
+        }
+    }
+    qukong.oninput=function(){
+        let str=this.value;
+        let reg=/^(\s*).{0,100}(\s*)$/g
+        let arr=reg.exec(str)
+        if(arr){
+            box6.innerHTML=arr[0];
+        }
+    }
+    qukong1.oninput=function(){
+        let str=this.value;
+        let str1=str.replace(/\s*/g,"")
+        box7.innerHTML=str1
+    }
+</script>

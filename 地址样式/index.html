@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta charset="unit-8">
+		<title>ygx</title>
+	</head>
+	<style>
+		div.box{
+			height: 600px;
+			width: 600px;
+			border: 2px solid yellow;
+			box-sizing: border-box;
+			margin: 0 auto;
+			position: relative;
+			top: 0;
+			left: 0;
+		}
+		div.box .box1{
+			height: 300px;
+			width: 300px;
+			border: 2px solid red;
+			box-sizing: border-box;
+			position: absolute;
+			left: 150px;
+			top: 50px;
+			border-radius: 50%;
+			border-bottom-left-radius: 0;
+			transform: rotate(-45deg);
+			
+		}
+		div.box:hover .box1{
+			animation: dizhi 1s infinite linear;
+		}
+		@keyframes dizhi{
+			from{
+
+			}
+			to{
+				position: absolute;
+				top: 100px;
+			}
+		}
+		div.box .box2{
+			height: 20px;
+			width: 300px;
+			border-radius: 50%;
+			background-color: yellow;
+			position: absolute;
+			top: 470px;
+			left: 0;
+			right: 0;
+			margin: auto;
+
+		}
+	</style>
+	<body>
+		<div class="box">
+			<div class="box1"></div>
+			<div class="box2"></div>
+		</div>
+	</body>
+</html>
